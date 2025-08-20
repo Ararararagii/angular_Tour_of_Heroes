@@ -1,0 +1,13 @@
+<div >
+@if(messageService.messages.length){
+
+  <h2>Messages</h2>
+  <button type="button" class="clear"
+          (click)="messageService.clear()">Clear messages</button>
+  <div> 
+    @for(message of messageService.messages; track message){
+    <li class="message-item">{{message}} </li>
+    }
+</div>
+}
+</div>

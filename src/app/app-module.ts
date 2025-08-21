@@ -7,11 +7,13 @@ import { App } from './app';
 import { Heroes } from './heroes/heroes';
 import { HeroDetail } from './hero-detail/hero-detail';
 import { Messages } from './messages/messages';
+import { Dashboard } from './dashboard/dashboard';
 
 @NgModule({
   declarations: [
     App,
-    Messages
+    Messages,
+    Dashboard
   ],
   imports: [
     Heroes,

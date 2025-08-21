@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { FormsModule } from '@angular/forms';
-import { HeroDetail } from '../hero-detail/hero-detail';
 import { HeroService } from '../hero-service';
-import { MessageService } from '../message-service';
+import { AppRoutingModule } from "../app-routing-module";
 
 
 @Component({
@@ -11,7 +10,7 @@ import { MessageService } from '../message-service';
   standalone: true,
   templateUrl: './heroes.html',
   styleUrl: './heroes.scss',
-  imports: [ FormsModule, HeroDetail]
+  imports: [FormsModule, AppRoutingModule]
 })
 
 //export class Heroes {
@@ -24,7 +23,7 @@ import { MessageService } from '../message-service';
 export class Heroes implements OnInit {
   heroes : Hero[] = [];
 
-  constructor(private heroService: HeroService, private messageService:MessageService) {}
+  constructor(private heroService: HeroService) {}
 
   selectedHero?: Hero;
 
@@ -36,11 +35,5 @@ export class Heroes implements OnInit {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
-
-
-  onSelect(hero: Hero):void{
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
 }
 

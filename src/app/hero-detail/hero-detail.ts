@@ -1,20 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
-import { UpperCasePipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService } from '../hero-service';
 
 @Component({
   selector: 'app-hero-detail',
-  standalone: true,
+  standalone: false,
   templateUrl: './hero-detail.html',
   styleUrl: './hero-detail.scss',
-    imports: [ UpperCasePipe, FormsModule]
 })
 
-export class HeroDetail {
+export class HeroDetail implements OnInit{
   hero : Hero|undefined;
   
   constructor(
@@ -24,7 +21,7 @@ export class HeroDetail {
   ) {}
 
 
-  ngInInit(): void {
+  ngOnInit(): void {
     this.getHero();
   }
 

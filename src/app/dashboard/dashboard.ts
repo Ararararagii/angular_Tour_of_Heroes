@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero-service';
-import { OnInit } from '@angular/core';
+import { AppRoutingModule } from "../app-routing-module";
 
 @Component({
   selector: 'app-dashboard',
-  standalone: false,
+    standalone: false,
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.scss'
+  styleUrl: './dashboard.scss',
 })
 export class Dashboard implements OnInit {
   heroes: Hero[] = [];
@@ -20,6 +20,6 @@ export class Dashboard implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(0, 5));
+      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
   }
 }

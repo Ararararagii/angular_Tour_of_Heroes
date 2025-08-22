@@ -13,14 +13,14 @@ import { Dashboard } from './dashboard/dashboard';
   declarations: [
     App,
     Messages,
-    Dashboard
+    HeroDetail,
+    Dashboard,
+    Heroes
   ],
-  imports: [
-    Heroes,
+  imports: [ 
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HeroDetail
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
